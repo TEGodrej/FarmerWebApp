@@ -9,7 +9,8 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldBeAbleToCreateNewOrder() {
-		String name="NewBanner";
+		int random=(int)(Math.random()*900)+100;
+		String name="NewBanner"+random;
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -20,8 +21,8 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		bannerPage.uploadImage();
 		driverUtility.threadWait(2);
 		bannerPage.sendkeyToBannerNameTextField(name);
-		driverUtility.threadWait(2);
-		bannerPage.clickOnBgnDivision();
+		driverUtility.threadWait(4);
+		bannerPage.clickOnBNGDivision();
 		driverUtility.threadWait(2);
 		bannerPage.selectFromStartDate();
 		driverUtility.threadWait(2);
@@ -37,7 +38,8 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldBeAbleToCreateNewOrderWithMultipleDivisionSelect() {
-		String name="NewBanner";
+		int random=(int)(Math.random()*900)+100;
+		String name="NewBanner"+random;
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -49,7 +51,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		driverUtility.threadWait(2);
 		bannerPage.sendkeyToBannerNameTextField(name);
 		driverUtility.threadWait(2);
-		bannerPage.clickOnBgnDivision();
+		bannerPage.clickOnBNGDivision();
 		bannerPage.clickOnbngDivision();
 		bannerPage.clickOnTestDivision();
 		driverUtility.threadWait(2);
@@ -64,7 +66,8 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldBeAbleToCancelProcess() {
-		String name="NewBanner";
+		int random=(int)(Math.random()*900)+100;
+		String name="NewBanner"+random;
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -79,7 +82,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_BannerName() {
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_BannerName() {
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -89,8 +92,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		driverUtility.threadWait(2);
 		bannerPage.uploadImage();
 		driverUtility.threadWait(2);
-		driverUtility.threadWait(2);
-		bannerPage.clickOnBgnDivision();
+		bannerPage.clickOnBNGDivision();
 		driverUtility.threadWait(2);
 		bannerPage.selectFromStartDate();
 		driverUtility.threadWait(2);
@@ -104,8 +106,9 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_ToDate() {
-		String name="NewBanner";
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_ToDate() {
+		int random=(int)(Math.random()*900)+100;
+		String name="NewBanner"+random;
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -117,10 +120,9 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		driverUtility.threadWait(2);
 		bannerPage.sendkeyToBannerNameTextField(name);
 		driverUtility.threadWait(2);
-		bannerPage.clickOnBgnDivision();
+		bannerPage.clickOnBNGDivision();
 		driverUtility.threadWait(2);
 		bannerPage.selectFromStartDate();
-		driverUtility.threadWait(2);
 		driverUtility.threadWait(2);
 		driverUtility.scrollToElement(bannerPage.getwelcomeTitle());
 		driverUtility.threadWait(2);
@@ -130,8 +132,9 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_FromDate() {
-		String name="NewBanner";
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_FromDate() {
+		int random=(int)(Math.random()*900)+100;
+		String name="NewBanner"+random;
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -143,9 +146,8 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		driverUtility.threadWait(2);
 		bannerPage.sendkeyToBannerNameTextField(name);
 		driverUtility.threadWait(2);
-		bannerPage.clickOnBgnDivision();
+		bannerPage.clickOnBNGDivision();
 		driverUtility.threadWait(2);
-//		bannerPage.selectFromStartDate();
 		driverUtility.threadWait(2);
 		bannerPage.selectToDate();
 		driverUtility.threadWait(2);

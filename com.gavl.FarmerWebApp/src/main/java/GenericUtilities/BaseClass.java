@@ -5,16 +5,19 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
 //import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import ObjectRepository.BannerPage;
+import ObjectRepository.CattelReportPage;
 import ObjectRepository.CircularsPage;
 import ObjectRepository.EditProductPage;
 import ObjectRepository.FilterPage;
 import ObjectRepository.LoginPage;
 import ObjectRepository.OrderOverviewPage;
 import ObjectRepository.ProductOverviewPage;
+import ObjectRepository.ServiceRequestPage;
 
 /**
  * This class is being used for start the appium server and to activate app
@@ -35,6 +38,8 @@ public class BaseClass {
 	public OrderOverviewPage orderOverviewPage;
 	public BannerPage  bannerPage;
 	public CircularsPage circularsPage;
+	public CattelReportPage cattelReportPage;
+	public ServiceRequestPage serviceRequestPage;
 	
 
 	/**
@@ -47,7 +52,7 @@ public class BaseClass {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			
-			driver.get("https://devcdplfarmerapp.godrejagrovet.com/");
+			driver.get("https://uatcdplfarmerapp.godrejagrovet.com/");
 			
 			driverUtility        = new Driverutility();
 			fileUtility          = new FileUtility();
@@ -60,16 +65,18 @@ public class BaseClass {
 			orderOverviewPage    = new OrderOverviewPage(driver);
 			bannerPage           = new BannerPage(driver);
 			circularsPage        = new CircularsPage(driver);
+			cattelReportPage     = new CattelReportPage(driver);
+			serviceRequestPage   = new ServiceRequestPage(driver);
 		}
 		
 		/**
-		 * This method is use to close the app and appium server
+		 * This method is use to close the app and web browser
 		 */
-//		@AfterMethod
-//		public void closeApp() throws IOException {
-//			driver.close();
-//			driver.quit();
-//		}
+		@AfterMethod
+		public void closeApp() throws IOException {
+			driver.close();
+			driver.quit();
+		}
 		
 	}
 

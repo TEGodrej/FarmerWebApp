@@ -9,8 +9,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserIsAbleToAddNewProduct() {
-		String productName="Automation";
-		String SkuCode="testGavl";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="testGavl"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -37,8 +39,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void UserShouldNotBeAbleToCoatOfferPriceMoreThan_MRP() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="testGavl"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		driverUtility.implicitlyWait(10);
@@ -61,7 +65,8 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_ProductName() {
-		String SkuCode="test";
+		int addRandom=(int)(Math.random()*900)+100;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -88,7 +93,9 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_SKU_Code() {
-		String productName="Automation";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -115,8 +122,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_Division() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -144,8 +153,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_Actual_MRP() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String offerPrice="100";
 		String netWeight= "10";
 		driverUtility.implicitlyWait(10);
@@ -172,8 +183,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_OfferPrice() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String netWeight= "10";
 		driverUtility.implicitlyWait(10);
@@ -200,8 +213,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserShouldNotBeAbleToAddNewProductWithout_NetWeight() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 //		String netWeight= "10";
@@ -230,8 +245,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void VerifyUserAbleToAddNewProductWith_InActiveState() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -258,8 +275,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserIsAbleToAddNewProductWithMultipleDivision() {
-		String productName="Automation";
-		String SkuCode="test";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";
@@ -287,8 +306,10 @@ public class VerifyAddNewProductTest extends BaseClass{
 	
 	@Test
 	public void verifyUserIsAbleToAddNewProductWithMultipleDivisionAsInactive() {
-        String productName="Automation";
-		String SkuCode="test34";
+		String name="Automation";
+		int addRandom=(int)(Math.random()*900)+100;
+		String productName= name+addRandom;
+		String SkuCode="test"+addRandom;
 		String actualPrice="120";
 		String offerPrice="100";
 		String netWeight= "10";

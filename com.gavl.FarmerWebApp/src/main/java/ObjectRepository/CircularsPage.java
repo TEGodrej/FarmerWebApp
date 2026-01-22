@@ -37,6 +37,9 @@ public class CircularsPage {
 	@FindBy(xpath = "//span[text()='Scheme']")
 	private WebElement schemeDropDown;
 	
+	@FindBy(xpath = "[id='dropdownItem_0']")
+	private WebElement allOption;
+	
 	@FindBy(xpath = "//span[text()='Info']")
 	private WebElement info;
 	
@@ -127,13 +130,18 @@ public class CircularsPage {
 	@FindBy(xpath = "//p[text()='Uploaded file is required']")
 	private WebElement fileWarningMessage;
 	
+	@FindBy(xpath = "//div[contains(@class,'focus:outline-primary focus:ring-primary items-center my-auto w-14 circulars-dropdown p-dropdown p-component p-inputwrapper p-inputwrapper-filled')]//div[contains(@aria-label,'Select')]//*[name()='svg']")
+	private WebElement filterDropDownButton;
+	
+	
+	
 	
 	
     LocalDate today = LocalDate.now();
-	LocalDate sec_date=today.minusDays(5);
+	LocalDate sec_date=today.plusDays(5);
     String Today = sec_date.format(DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH));
     
-    LocalDate pastdate=today.minusDays(8);  
+    LocalDate pastdate=today.plusDays(8);  
     String formattedDate = pastdate.format(DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH));
 	
 	
@@ -333,6 +341,16 @@ public class CircularsPage {
 		}
 	}
 	
+	public void clickOnAllOption() {
+		try {
+			allOption.click();
+			System.out.println("Clicked on All-Option ");
+		} catch (Exception e) {
+			System.out.println("Not able to click on All-Option "+e);
+		}
+	}
+	
+	
 	public void clickOnInfoOption() {
 		try {
 			info.click();
@@ -492,6 +510,15 @@ public class CircularsPage {
 			}
 		} catch (Exception e) {
 			System.out.println("Not able to assert File Warning Message "+e);
+		}
+	}
+	
+	public void clickOnfilterDropDownButton() {
+		try {
+			filterDropDownButton.click();
+			System.out.println("Clicked on filter DropDown Button");
+		} catch (Exception e) {
+			System.out.println("Not able to click on filter DropDown Button "+e);
 		}
 	}
 }

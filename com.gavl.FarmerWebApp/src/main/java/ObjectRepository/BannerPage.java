@@ -58,8 +58,8 @@ public class BannerPage {
 	@FindBy(xpath = "//span[text()='PNB']")
 	private WebElement pnbDivision;
 	
-	@FindBy(xpath = "//span[text()='BGN']")
-	private WebElement bgnDivision;
+	@FindBy(xpath = "//span[text()='BNG']")
+	private WebElement bng1Division;
 	
 	@FindBy(xpath = "//span[text()='NDP']")
 	private WebElement ndpDivision;
@@ -220,9 +220,9 @@ public class BannerPage {
 		}
 	}
 	
-	public void clickOnBgnDivision() {
+	public void clickOnBNGDivision() {
 		try {
-			bgnDivision.click();
+			bng1Division.click();
 			System.out.println("clicked on bgnDivision");
 		} catch (Exception e) {
 			System.out.println("Not able to click on bgnDivision "+e);

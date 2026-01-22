@@ -19,7 +19,7 @@ public class FilterPage {
 	}
 	
 	
-	@FindBy(xpath = "//input[@id='start_date']")
+	@FindBy(xpath = "//input[@placeholder='Select date']")
 	private WebElement startDateCalender;
 	
 	@FindBy(id= "end_date")
@@ -64,18 +64,68 @@ public class FilterPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/*[name()='svg'][1]/*[name()='use'][1]")
 	private WebElement crossButton;
 	
+//	=======================================================================================================================
+	
+	@FindBy(xpath = "//span[text()='Select Plant ']")
+	private WebElement selectPlantDropDown;
+	
+	@FindBy(xpath = "//span[text()=' Anaicut (1209)']")
+	private WebElement anaicutOption;
+	
+	@FindBy(xpath = "//span[text()='Gotlam']")
+	private WebElement gotlamOption;
+	
+	@FindBy(xpath = "//span[text()='Naidumangalam']")
+	private WebElement naidumangalamOption;
+	
+	@FindBy(xpath = "//span[text()='Batajangalapalem Packing Stati']")
+	private WebElement batajangalpalemOption;
+	
+	@FindBy(xpath = "//span[text()='Select DFP']")
+	private WebElement selectDFP_DropDown;
+	
+	@FindBy(xpath = "//span[text()='KARAKA DEVI']")
+	private WebElement dfp_Option_one;
+	
+	@FindBy(xpath = "//span[text()='SARANYA R']")
+	private WebElement dfp_option_two;
+	
+//	=============================================================================================
+	
+	@FindBy(xpath = "//span[text()='Select Issue Type']")
+	private WebElement selectIssueTypeDropDown;
+	
+	@FindBy(xpath = "//span[text()='Payment Discrepancy']")
+	private WebElement paymentDiscrepencyOption;
+	
+	@FindBy(xpath = "//span[text()='Cattle Health']")
+	private WebElement cattleHealthOption;
+	
+	@FindBy(xpath = "//span[text()='Feed Supply Status']")
+	private WebElement feedSupplyStatusOption;
+	
+	@FindBy(xpath = "//span[text()='Other']")
+	private WebElement otherOption;
+//	==========================================================================================================
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Service ID']")
+	private WebElement serviceIdTextfield;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Farmer Code']")
+	private WebElement farmerCodeTextfield;
+	
 
     LocalDate today = LocalDate.now();
 	
-    String Today = today.format(DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH));
+    String Today = today.format(DateTimeFormatter.ofPattern("dd", Locale.ENGLISH));
     
-    LocalDate pastdate=today.minusDays(5);  
-    String formattedDate = pastdate.format(DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH));
+    LocalDate pastdate=today.minusDays(10);  
+    String formattedDate = pastdate.format(DateTimeFormatter.ofPattern("d", Locale.ENGLISH));
 	
 	
 	
 	public void selectStartDate() {
-		WebElement S_Date=driver.findElement(By.xpath("//div[@aria-label='"+formattedDate+"']"));
+		WebElement S_Date=driver.findElement(By.xpath("//span[text()='"+formattedDate+"']"));////div[@aria-label='"+formattedDate+"']
 		S_Date.click();
 		System.out.println(formattedDate);
 	}
@@ -218,6 +268,132 @@ public class FilterPage {
 			System.out.println("Clicked on Cross Button");
 		} catch (Exception e) {
 			System.out.println("Not able to click on Cross Button"+e);
+		}
+	}
+	
+	public void clickOnSelectPlantDropDown() {
+		try {
+			selectPlantDropDown.click();
+			System.out.println("Clicked on selectPlant DropDown");
+		} catch (Exception e) {
+			System.out.println("Not able to click on selectPlant DropDown "+e);
+		}
+	}
+	
+	public void clickOnAnaicutOption() {
+		try {
+			anaicutOption.click();
+			System.out.println("Clicked on anaicutOption ");
+		} catch (Exception e) {
+			System.out.println("Not able to click on anaicutOption "+e);
+		}
+	}
+	
+	public void  clickOnGotlamOption() {
+		try {
+			gotlamOption.click();
+			System.out.println("Clicked on Gotlam Option");
+		} catch (Exception e) {
+			System.out.println("Not able to click on gotlamOption "+e);
+		}
+	}
+	
+	public void clikOnNaidumangalamOption() {
+		try {
+			naidumangalamOption.click();
+			System.out.println("Clicked on Naidumangalam Option");
+		} catch (Exception e) {
+			System.out.println("Not able to click on naidumangalamOption "+e);
+		}
+	}
+	
+	public void clickOnSelectDFP_DropDown() {
+		try {
+			selectDFP_DropDown.click();
+			System.out.println("Clicked on selectDFP_DropDown");
+		} catch (Exception e) {
+			System.out.println("Not able to click on selectDFP_DropDown "+e);
+		}
+	}
+	
+	public void clickOnDFP_Option_one() {
+		try {
+			dfp_Option_one.click();
+			System.out.println("Clicked on dfp_Option_one");
+		} catch (Exception e) {
+			System.out.println("Not able to click on dfp_Option_one "+e);
+		}
+	}
+	
+	public void clickOnDFP_option_two() {
+		try {
+			dfp_option_two.click();
+			System.out.println("Clicked on dfp_option_two");
+		} catch (Exception e) {
+			System.out.println("Not able to click on dfp_option_two "+e);
+		}
+	}
+	
+	public void clickOnSelectIssueTypeDropDown() {
+		try {
+			selectIssueTypeDropDown.click();
+			System.out.println("Clicked on Select Issue Type DropDown");
+		} catch (Exception e) {
+			System.out.println("Not able to click on Select Issue Type DropDown "+e);
+		}
+	}
+	
+	public void clickOnPaymentDiscrepencyOption() {
+		try {
+			paymentDiscrepencyOption.click();
+			System.out.println("Selected PaymentDiscrepency Option");
+		} catch (Exception e) {
+			System.out.println("Not able to select Payment Discrepency Option "+e);
+		}
+	}
+	
+	public void clickOnCattleHealthOption() {
+		try {
+			cattleHealthOption.click();
+			System.out.println("Selected Cattle Health Option");
+		} catch (Exception e) {
+			System.out.println("Not able to select Cattle Health Option "+e);
+		}
+	}
+	
+	public void clickOnfeedSupplyStatusOption() {
+		try {
+			feedSupplyStatusOption.click();
+			System.out.println("Selected Feed Supply Status Option");
+			} catch (Exception e) {
+			System.out.println("Not able to select Feed Supply Status Option "+e);
+		}
+	}
+	
+	public void clickOnotherOption() {
+		try {
+			otherOption.click();
+			System.out.println("Selected 'Other' Option");
+		} catch (Exception e) {
+			System.out.println("Not able to click on 'other' Option "+e);
+		}
+	}
+	
+	public void sendkeyToServiceIdTextfield(String key) {
+		try {
+			serviceIdTextfield.sendKeys(key);
+			System.out.println("Entered value in serviceId Textfield");
+		} catch (Exception e) {
+			System.out.println("Not able to enter value into serviceId Textfield "+e);
+		}
+	}
+	
+	public void sendkeyToFarmerCodeTextfield(String key) {
+		try {
+			farmerCodeTextfield.sendKeys(key);
+			System.out.println("Entered value into farmerCode Textfield");
+		} catch (Exception e) {
+			System.out.println("Not able to enter value into farmerCode Textfield "+e);
 		}
 	}
 }

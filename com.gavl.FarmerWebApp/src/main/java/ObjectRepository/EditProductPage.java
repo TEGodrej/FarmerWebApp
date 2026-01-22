@@ -146,6 +146,18 @@ public class EditProductPage {
 	
 	@FindBy(xpath = "input[type='file'][accept='image/jpeg,image/png']")
 	private WebElement uploadImageButton;
+//	======================================================================================================
+	@FindBy(xpath = "//span[text()='Add New']")
+	private WebElement addNewTab;
+	
+	@FindBy(xpath = "//span[text()='Select Division']")
+	private WebElement selectDivisionDropDown;
+	
+	@FindBy(xpath = "//span[text()='Select Plant']")
+	private WebElement selectPlantDropDown;
+	
+	@FindBy(xpath = "//span[text()='Obaroies']")
+	private WebElement ObaroiesOption;
 
 	public void clickOncategoryDropDown() {
 		try {
