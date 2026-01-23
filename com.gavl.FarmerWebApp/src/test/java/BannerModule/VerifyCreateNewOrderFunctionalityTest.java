@@ -79,7 +79,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_BannerName() {
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_BannerName() {
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
 		driverUtility.threadWait(2);
@@ -104,7 +104,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_ToDate() {
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_ToDate() {
 		String name="NewBanner";
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
@@ -130,7 +130,7 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 	}
 	
 	@Test
-	public void verifyUserShouldNotBeAbleToCerateBannerWithout_FromDate() {
+	public void verifyUserShouldNotBeAbleToCreateBannerWithout_FromDate() {
 		String name="NewBanner";
 		driverUtility.implicitlyWait(10);
 		loginPage.clickOn_SSO_Option();
