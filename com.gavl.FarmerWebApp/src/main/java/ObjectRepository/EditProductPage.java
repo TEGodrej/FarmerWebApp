@@ -21,7 +21,7 @@ public class EditProductPage {
 	@FindBy(xpath = "//div[contains(@aria-label,'Select Category')]//*[name()='svg']")
 	private WebElement categoryDropDown;
 
-	@FindBy(xpath = "//span[text()='Category_001']")
+	@FindBy(xpath = "//span[text()='Milk Based Sweets']")
 	private WebElement category_001_Option;
 
 	@FindBy(xpath = "//span[text()='Feed']")
@@ -84,8 +84,11 @@ public class EditProductPage {
 	@FindBy(xpath = "//input[@placeholder='Enter Offer Price']")
 	private WebElement offerPriceTextField;
 
-	@FindBy(xpath = "//input[@placeholder='Enter Net Weight (Kg)']")
+	@FindBy(xpath = "//input[@placeholder='Enter Net Weight']")
 	private WebElement netWeightTextField;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Unit']")
+	private WebElement unitTextField;
 
 	@FindBy(xpath = "//div[@aria-label='Select Select Status']//*[name()='svg']")
 	private WebElement selectStatusDropDown;
@@ -158,6 +161,36 @@ public class EditProductPage {
 	
 	@FindBy(xpath = "//span[text()='Obaroies']")
 	private WebElement ObaroiesOption;
+	
+//	@FindBy(xpath = "//span[text()='Select Division']")
+//	private WebElement selectDivisionDropDown;
+//	
+//	@FindBy(xpath = "//span[text()='Select Plant']")
+//	private WebElement selectPlantDropDown;
+	
+	@FindBy(xpath = "//span[text()='Batajangalapalem Packing Stati']")
+	private WebElement  BatajangalapalemOption;
+	
+	public WebElement getvkpDivisionOption() {
+		return vkpDivisionOption;
+	}
+	public void clickOnBatajangalapalemOption() {
+		try {
+			BatajangalapalemOption.click();
+			System.out.println("Clicked on BatajangalapalemOption");
+		} catch (Exception e) {
+			System.out.println("Not able to click on BatajangalapalemOption " + e);
+		}
+	} 
+	
+	public void clickOnselectPlantDropDown() {
+		try {
+			selectPlantDropDown.click();
+			System.out.println("Clicked on selectPlantDropDown");
+		} catch (Exception e) {
+			System.out.println("Not able to click on selectPlantDropDown " + e);
+		}
+	} 
 
 	public void clickOncategoryDropDown() {
 		try {
@@ -166,7 +199,16 @@ public class EditProductPage {
 		} catch (Exception e) {
 			System.out.println("Not able to click on categoryDropDown " + e);
 		}
-	}
+	}      
+	
+	public void clickOnselectDivisionDropDown() {
+		try {
+			selectDivisionDropDown.click();
+			System.out.println("Clicked on selectDivisionDropDown");
+		} catch (Exception e) {
+			System.out.println("Not able to click on selectDivisionDropDown " + e);
+		}
+	}   
 
 	public void clickOnCategory_001_Option() {
 		try {
@@ -569,6 +611,15 @@ public class EditProductPage {
 			System.out.println("Uploaded an image of the product");
 		} catch (Exception e) {
 			System.out.println("Not able to upload an image "+e);
+		}
+	}
+	
+	public void sendkeyTounitTextField(String key) {
+		try {
+			unitTextField.sendKeys(key);
+			System.out.println("Entered value in unitTextField");
+		} catch (Exception e) {
+			System.out.println("Not able to Entered value in unitTextField "+e);
 		}
 	}
 

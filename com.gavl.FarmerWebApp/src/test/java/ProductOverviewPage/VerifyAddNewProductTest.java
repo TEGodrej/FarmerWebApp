@@ -26,12 +26,19 @@ public class VerifyAddNewProductTest extends BaseClass{
 		editProductPage.clickOnCategory_001_Option();
 		editProductPage.sendkeyToProductNameTextField(productName);
 		editProductPage.sendkeyToSkuCodeTextField(SkuCode);
-		editProductPage.clickOn_BGN_DivisionOption();
+//		
 		editProductPage.sendkeyToActualPriceTextField(actualPrice);
-		editProductPage.sendkeyToOfferPriceTextField(offerPrice);
+		
 		editProductPage.sendkeyToNetWeightTextField(netWeight);
+		editProductPage.sendkeyTounitTextField("KG");
 		editProductPage.clickOnselectStatusDropDown();
 		editProductPage.clickOnActiveOption();
+		editProductPage.clickOnselectDivisionDropDown();
+		driverUtility.scrollIntoView(editProductPage.getvkpDivisionOption());
+		editProductPage.clickOn_VZG_DivisionOption();
+		editProductPage.clickOnselectPlantDropDown();
+		editProductPage.clickOnBatajangalapalemOption();
+		editProductPage.sendkeyToOfferPriceTextField(offerPrice);
 		editProductPage.clickOnsaveButton();
 		productOverviewPage.clickOnAdminDropDown();
 		productOverviewPage.clickOnLogoutButton();

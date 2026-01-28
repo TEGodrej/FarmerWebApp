@@ -114,6 +114,14 @@ public class FilterPage {
 	@FindBy(xpath = "//input[@placeholder='Enter Farmer Code']")
 	private WebElement farmerCodeTextfield;
 	
+	@FindBy(xpath = "//input[@placeholder=\"Enter Service ID\"]")
+	private WebElement serviceIDTextfield;
+	
+	@FindBy(xpath = "//div[@class='flex items-center space-x-4']//span[text()='Service Requests']")
+	private WebElement serviceRequestTab;
+	
+	@FindBy(xpath = "//span[text()='Filter']")
+	private WebElement  filteroption;
 
     LocalDate today = LocalDate.now();
 	
@@ -394,6 +402,33 @@ public class FilterPage {
 			System.out.println("Entered value into farmerCode Textfield");
 		} catch (Exception e) {
 			System.out.println("Not able to enter value into farmerCode Textfield "+e);
+		}
+	}
+	
+	public void sendkeyToserviceIDTextfield(String key) {
+		try {
+			serviceIDTextfield.sendKeys(key);
+			System.out.println("send value to serviceIDTextfield");
+		} catch (Exception e) {
+			System.out.println("not able to send value serviceIDTextfield "+e);
+		}
+	}
+	
+	public void clickOnserviceRequestTab() {
+		try {
+			serviceRequestTab.click();
+			System.out.println("Clicked on serviceRequestTab");
+		} catch (Exception e) {
+			System.out.println("Not able to click on serviceRequestTab "+e);
+		}
+	}
+	
+	public void clickOnfilteroption() {
+		try {
+			filteroption.click();
+			System.out.println("Clicked on filteroption");
+		} catch (Exception e) {
+			System.out.println("Not able to filteroption "+e);
 		}
 	}
 }

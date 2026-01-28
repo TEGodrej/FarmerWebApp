@@ -135,6 +135,17 @@ public class CircularsPage {
 	
 	
 	
+	@FindBy(xpath = "//span[text()='Filter']")
+	private WebElement filterOption;
+	
+	public void clickOnfilterOption() {
+		try {
+			filterOption.click();
+			System.out.println("Clicked on filterOption");
+		} catch (Exception e) {
+			System.out.println("Not able to click on filterOption");
+		}
+	}
 	
 	
     LocalDate today = LocalDate.now();
