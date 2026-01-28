@@ -156,5 +156,41 @@ public class VerifyCreateNewOrderFunctionalityTest extends BaseClass{
 		bannerPage.clickOnCancelButton();
 	}
 	
+	public void userApplyDatefilter() {
+		driverUtility.implicitlyWait(10);
+		loginPage.clickOn_SSO_Option();
+		driverUtility.threadWait(2);
+		productOverviewPage.clickOnBannerTab();
+		circularsPage.clickOnfilterOption();
+		filterPage.selectStartDate();
+		filterPage.select_ToDate();
+		filterPage.clickOnApplyButton();
+		}
+		
+		@Test
+		public void userApplyDivisionfilter() {
+			driverUtility.implicitlyWait(10);
+			loginPage.clickOn_SSO_Option();
+			driverUtility.threadWait(2);
+			productOverviewPage.clickOnBannerTab();
+			circularsPage.clickOnfilterOption();
+//			filterPage.selectStartDate();
+			filterPage.clickOn_VZG_Division();
+			filterPage.clickOnApplyButton();
+		
+		}
+		
+		@Test
+		public void userApply_CC_filter() {
+			driverUtility.implicitlyWait(10);
+			loginPage.clickOn_SSO_Option();
+			driverUtility.threadWait(2);
+			productOverviewPage.clickOnBannerTab();
+			circularsPage.clickOnfilterOption();
+			filterPage.clickOnSelect_CC_DropDown();
+			filterPage.clickOnFirst_CC_Option();
+			filterPage.clickOnApplyButton();
+		}
+	
 
 }

@@ -64,6 +64,14 @@ public class FilterPage {
 	@FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/*[name()='svg'][1]/*[name()='use'][1]")
 	private WebElement crossButton;
 	
+	@FindBy(xpath = "//input[@placeholder=\"Enter Service ID\"]")
+	private WebElement serviceIDTextfield;
+	
+	@FindBy(xpath = "//div[@class='flex items-center space-x-4']//span[text()='Service Requests']")
+	private WebElement serviceRequestTab;
+	
+	@FindBy(xpath = "//span[text()='Filter']")
+	private WebElement  filteroption;
 
     LocalDate today = LocalDate.now();
 	
@@ -218,6 +226,33 @@ public class FilterPage {
 			System.out.println("Clicked on Cross Button");
 		} catch (Exception e) {
 			System.out.println("Not able to click on Cross Button"+e);
+		}
+	}
+	
+	public void sendkeyToserviceIDTextfield(String key) {
+		try {
+			serviceIDTextfield.sendKeys(key);
+			System.out.println("send value to serviceIDTextfield");
+		} catch (Exception e) {
+			System.out.println("not able to send value serviceIDTextfield "+e);
+		}
+	}
+	
+	public void clickOnserviceRequestTab() {
+		try {
+			serviceRequestTab.click();
+			System.out.println("Clicked on serviceRequestTab");
+		} catch (Exception e) {
+			System.out.println("Not able to click on serviceRequestTab "+e);
+		}
+	}
+	
+	public void clickOnfilteroption() {
+		try {
+			filteroption.click();
+			System.out.println("Clicked on filteroption");
+		} catch (Exception e) {
+			System.out.println("Not able to filteroption "+e);
 		}
 	}
 }
